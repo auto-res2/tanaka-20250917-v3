@@ -4,5 +4,79 @@
     "denoising diffusion transformer",
     "diffusion transformer optimization",
     "accelerated diffusion transformer sampling"
+  ],
+  "research_study_list": [
+    {
+      "title": "Scalable High-Resolution Pixel-Space Image Synthesis with Hourglass Diffusion Transformers"
+    },
+    {
+      "title": "DiT-3D: Exploring Plain Diffusion Transformers for 3D Shape Generation"
+    },
+    {
+      "title": "On Analyzing Generative and Denoising Capabilities of Diffusion-based Deep Generative Models"
+    },
+    {
+      "title": "U-DiTs: Downsample Tokens in U-Shaped Diffusion Transformers"
+    },
+    {
+      "title": "MC-DiT: Contextual Enhancement via Clean-to-Clean Reconstruction for Masked Diffusion Models"
+    },
+    {
+      "title": "Remix-DiT: Mixing Diffusion Transformers for Multi-Expert Denoising"
+    },
+    {
+      "title": "Alleviating Distortion in Image Generation via Multi-Resolution Diffusion Models and Time-Dependent Layer Normalization"
+    },
+    {
+      "title": "Optical Diffusion Models for Image Generation"
+    },
+    {
+      "title": "Learning-to-Cache: Accelerating Diffusion Transformer via Layer Caching"
+    },
+    {
+      "title": "U-DiTs: Downsample Tokens in U-Shaped Diffusion Transformers"
+    },
+    {
+      "title": "DiP-GO: A Diffusion Pruner via Few-step Gradient Optimization"
+    },
+    {
+      "title": "PTQ4DiT: Post-training Quantization for Diffusion Transformers"
+    },
+    {
+      "title": "DiTFastAttn: Attention Compression for Diffusion Transformer Models"
+    },
+    {
+      "title": "FasterDiT: Towards Faster Diffusion Transformers Training without Architecture Modification"
+    },
+    {
+      "title": "Analyzing and Improving the Training Dynamics of Diffusion Models"
+    },
+    {
+      "title": "Analyzing and Improving the Training Dynamics of Diffusion Models"
+    },
+    {
+      "title": "A Simple Early Exiting Framework for Accelerated Sampling in Diffusion Models"
+    },
+    {
+      "title": "Multistep Distillation of Diffusion Models via Moment Matching"
+    },
+    {
+      "title": "Learning-to-Cache: Accelerating Diffusion Transformer via Layer Caching"
+    },
+    {
+      "title": "FasterDiT: Towards Faster Diffusion Transformers Training without Architecture Modification"
+    },
+    {
+      "title": "Post-Training Quantization on Diffusion Models"
+    },
+    {
+      "title": "Accelerating Convergence of Score-Based Diffusion Models, Provably"
+    },
+    {
+      "title": "On Accelerating Diffusion-Based Sampling Processes via Improved Integration Approximation"
+    },
+    {
+      "title": "Faster Diffusion: Rethinking the Role of the Encoder for Diffusion Model Inference"
+    }
   ]
 }
