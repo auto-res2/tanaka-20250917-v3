@@ -1,0 +1,10 @@
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.28,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}

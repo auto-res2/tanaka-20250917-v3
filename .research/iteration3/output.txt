@@ -1,0 +1,712 @@
+=== [PHASE 2/2] Full experiment start Wed Sep 17 05:00:28 AM UTC 2025 ===
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 76.77,
+  "energy_j_per_img": 0.5464,
+  "certified_fid_bound": 1.035,
+  "certified_lpips_bound": 0.0443,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.51,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.4,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.38,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.37,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.37,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.37,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.37,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.37,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.38,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.34,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.34,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.34,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.34,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.3,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.53,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.32,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.3,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.46,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 10,
+  "achieved_latency_ms": 0.4,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.38,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.3,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.34,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.42,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 20,
+  "achieved_latency_ms": 0.25,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.26,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.44,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.51,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.31,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.44,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.37,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.33,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.42,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.36,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 25,
+  "achieved_latency_ms": 0.35,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.28,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.26,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.25,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.26,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 50,
+  "achieved_latency_ms": 0.26,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.26,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.26,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.25,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.3,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 40,
+  "achieved_latency_ms": 0.28,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.27,
+  "energy_j_per_img": 0.4383,
+  "certified_fid_bound": 1.0328,
+  "certified_lpips_bound": 0.0357,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.27,
+  "energy_j_per_img": 0.4147,
+  "certified_fid_bound": 1.0258,
+  "certified_lpips_bound": 0.0485,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.27,
+  "energy_j_per_img": 0.4267,
+  "certified_fid_bound": 1.0326,
+  "certified_lpips_bound": 0.0405,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.27,
+  "energy_j_per_img": 0.5664,
+  "certified_fid_bound": 1.0257,
+  "certified_lpips_bound": 0.039,
+  "violation": true,
+  "budget_met": true
+}
+{
+  "device": "cuda",
+  "budget_ms": 80,
+  "achieved_latency_ms": 0.24,
+  "energy_j_per_img": 0.5542,
+  "certified_fid_bound": 1.0125,
+  "certified_lpips_bound": 0.0429,
+  "violation": true,
+  "budget_met": true
+}
+=== [PHASE 2/2] Full experiment end Wed Sep 17 05:01:09 AM UTC 2025 ===

@@ -1,0 +1,271 @@
+/home/toma/pt80-1-a-27/_work/tanaka-20250917-v3/tanaka-20250917-v3/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+2025-09-17 05:00:36,106 - INFO - --- Starting Full Experiment ---
+2025-09-17 05:00:36,108 - INFO - Configuration loaded from config/full_experiment.yaml
+2025-09-17 05:00:36,108 - INFO - Running a pre-flight smoke test before the full experiment...
+2025-09-17 05:00:36,110 - INFO - Configuration loaded from config/smoke_test.yaml
+2025-09-17 05:00:36,128 - INFO - Using device: NVIDIA A100 80GB PCIe
+2025-09-17 05:00:36,129 - INFO - Preparing dataloaders...
+2025-09-17 05:00:41,406 - INFO - Dataloaders created successfully.
+2025-09-17 05:00:41,406 - INFO - Starting RADIANCE training...
+/home/toma/pt80-1-a-27/_work/tanaka-20250917-v3/tanaka-20250917-v3/.venv/lib/python3.11/site-packages/torch/nn/modules/loss.py:616: UserWarning: Using a target size (torch.Size([1, 1])) that is different to the input size (torch.Size([2, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+2025-09-17 05:00:42,277 - INFO - Step 0/10: Reward: 0.0142, Actor Loss: 0.0256, Critic Loss: 0.0022
+2025-09-17 05:00:42,323 - INFO - Training complete.
+2025-09-17 05:00:42,332 - INFO - Starting Zeroth-Order Adaptation...
+2025-09-17 05:00:42,339 - INFO - CMA-ES Iter 1: Best Bound = -1.6875
+2025-09-17 05:00:42,339 - INFO - Target bound reached at iteration 1.
+2025-09-17 05:00:42,339 - INFO - Zeroth-Order Adaptation complete.
+2025-09-17 05:00:42,339 - INFO - Loading model: SD-XL
+Keyword arguments {'use_auth_token': None} are not expected by StableDiffusionXLPipeline and will be ignored.
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`torch_dtype` is deprecated! Use `dtype` instead!
+2025-09-17 05:00:42,745 - WARNING - `torch_dtype` is deprecated! Use `dtype` instead!
+Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  5.70it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:01,  3.87it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:00<00:00,  6.14it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:02<00:00,  2.19it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:02<00:00,  3.18it/s]
+2025-09-17 05:00:45,790 - INFO - Running eval for model:SD-XL, device:server, budget:80, seed:42
+2025-09-17 05:00:45,790 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:00:45,869 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:00:45,869 - INFO - Generating Pareto plot for Latency vs. Energy...
+2025-09-17 05:00:45,997 - INFO - Saved plot to .research/iteration3/images/latency_vs_energy_pareto.png
+2025-09-17 05:00:45,997 - INFO - Experiment finished successfully.
+2025-09-17 05:00:46,008 - INFO - Smoke test passed. Proceeding with the full experiment.
+2025-09-17 05:00:46,009 - INFO - Using device: NVIDIA A100 80GB PCIe
+2025-09-17 05:00:46,009 - INFO - Preparing dataloaders...
+2025-09-17 05:00:49,751 - INFO - Dataloaders created successfully.
+2025-09-17 05:00:49,751 - INFO - Starting RADIANCE training...
+/home/toma/pt80-1-a-27/_work/tanaka-20250917-v3/tanaka-20250917-v3/.venv/lib/python3.11/site-packages/torch/nn/modules/loss.py:616: UserWarning: Using a target size (torch.Size([1, 1])) that is different to the input size (torch.Size([16, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+2025-09-17 05:00:50,070 - INFO - Step 0/1000: Reward: -0.1803, Actor Loss: 0.1337, Critic Loss: 0.0285
+2025-09-17 05:00:51,161 - INFO - Step 100/1000: Reward: 0.1873, Actor Loss: -0.2317, Critic Loss: 0.0374
+2025-09-17 05:00:52,261 - INFO - Step 200/1000: Reward: 1.5875, Actor Loss: -1.4292, Critic Loss: 1.4264
+2025-09-17 05:00:53,360 - INFO - Step 300/1000: Reward: 2.0155, Actor Loss: -1.4255, Critic Loss: 1.4388
+2025-09-17 05:00:54,459 - INFO - Step 400/1000: Reward: 2.5052, Actor Loss: -1.4291, Critic Loss: 1.4728
+2025-09-17 05:00:55,558 - INFO - Step 500/1000: Reward: 3.0598, Actor Loss: -1.4319, Critic Loss: 1.5013
+2025-09-17 05:00:56,658 - INFO - Step 600/1000: Reward: nan, Actor Loss: nan, Critic Loss: nan
+2025-09-17 05:00:57,756 - INFO - Step 700/1000: Reward: nan, Actor Loss: nan, Critic Loss: nan
+2025-09-17 05:00:58,855 - INFO - Step 800/1000: Reward: nan, Actor Loss: nan, Critic Loss: nan
+2025-09-17 05:00:59,953 - INFO - Step 900/1000: Reward: nan, Actor Loss: nan, Critic Loss: nan
+2025-09-17 05:01:01,040 - INFO - Training complete.
+2025-09-17 05:01:01,051 - INFO - Starting Zeroth-Order Adaptation...
+2025-09-17 05:01:01,058 - INFO - CMA-ES Iter 1: Best Bound = -1.6080
+2025-09-17 05:01:01,058 - INFO - Target bound reached at iteration 1.
+2025-09-17 05:01:01,058 - INFO - Zeroth-Order Adaptation complete.
+2025-09-17 05:01:01,058 - INFO - Loading model: DiT-XL/2
+Keyword arguments {'use_auth_token': None} are not expected by StableDiffusionXLPipeline and will be ignored.
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  6.61it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00,  4.50it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:00<00:00,  5.44it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:02<00:00,  2.31it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:02<00:00,  3.17it/s]
+2025-09-17 05:01:04,697 - INFO - Loaded SD-XL as a placeholder for DiT-XL/2.
+2025-09-17 05:01:04,698 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:10, seed:17
+2025-09-17 05:01:04,698 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:04,701 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:04,701 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:10, seed:29
+2025-09-17 05:01:04,701 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:04,703 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:04,704 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:10, seed:43
+2025-09-17 05:01:04,704 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:04,705 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:04,706 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:10, seed:71
+2025-09-17 05:01:04,706 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:04,709 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:04,710 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:10, seed:97
+2025-09-17 05:01:04,710 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:04,712 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:04,712 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:20, seed:17
+2025-09-17 05:01:04,712 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:04,714 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:04,714 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:20, seed:29
+2025-09-17 05:01:04,714 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:04,716 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:04,716 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:20, seed:43
+2025-09-17 05:01:04,716 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:04,718 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:04,718 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:20, seed:71
+2025-09-17 05:01:04,718 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:04,720 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:04,720 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:20, seed:97
+2025-09-17 05:01:04,720 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:04,722 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:04,722 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:40, seed:17
+2025-09-17 05:01:04,722 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,724 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,724 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:40, seed:29
+2025-09-17 05:01:04,724 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,726 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,726 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:40, seed:43
+2025-09-17 05:01:04,726 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,728 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,728 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:40, seed:71
+2025-09-17 05:01:04,728 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,730 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,730 - INFO - Running eval for model:DiT-XL/2, device:edge, budget:40, seed:97
+2025-09-17 05:01:04,731 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,732 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,733 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:25, seed:17
+2025-09-17 05:01:04,733 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:04,734 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:04,735 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:25, seed:29
+2025-09-17 05:01:04,735 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:04,736 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:04,737 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:25, seed:43
+2025-09-17 05:01:04,737 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:04,739 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:04,739 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:25, seed:71
+2025-09-17 05:01:04,739 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:04,741 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:04,741 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:25, seed:97
+2025-09-17 05:01:04,741 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:04,743 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:04,743 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:50, seed:17
+2025-09-17 05:01:04,743 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:04,745 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:04,745 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:50, seed:29
+2025-09-17 05:01:04,745 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:04,747 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:04,747 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:50, seed:43
+2025-09-17 05:01:04,747 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:04,749 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:04,749 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:50, seed:71
+2025-09-17 05:01:04,749 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:04,751 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:04,751 - INFO - Running eval for model:DiT-XL/2, device:laptop, budget:50, seed:97
+2025-09-17 05:01:04,751 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:04,752 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:04,753 - INFO - Running eval for model:DiT-XL/2, device:server, budget:40, seed:17
+2025-09-17 05:01:04,753 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,754 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,755 - INFO - Running eval for model:DiT-XL/2, device:server, budget:40, seed:29
+2025-09-17 05:01:04,755 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,756 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,757 - INFO - Running eval for model:DiT-XL/2, device:server, budget:40, seed:43
+2025-09-17 05:01:04,757 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,758 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,759 - INFO - Running eval for model:DiT-XL/2, device:server, budget:40, seed:71
+2025-09-17 05:01:04,759 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,760 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,761 - INFO - Running eval for model:DiT-XL/2, device:server, budget:40, seed:97
+2025-09-17 05:01:04,761 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:04,762 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:04,762 - INFO - Running eval for model:DiT-XL/2, device:server, budget:80, seed:17
+2025-09-17 05:01:04,763 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:04,764 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:04,765 - INFO - Running eval for model:DiT-XL/2, device:server, budget:80, seed:29
+2025-09-17 05:01:04,765 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:04,766 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:04,766 - INFO - Running eval for model:DiT-XL/2, device:server, budget:80, seed:43
+2025-09-17 05:01:04,766 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:04,768 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:04,768 - INFO - Running eval for model:DiT-XL/2, device:server, budget:80, seed:71
+2025-09-17 05:01:04,768 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:04,770 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:04,770 - INFO - Running eval for model:DiT-XL/2, device:server, budget:80, seed:97
+2025-09-17 05:01:04,770 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:04,772 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:04,772 - INFO - Loading model: SD-XL
+Keyword arguments {'use_auth_token': None} are not expected by StableDiffusionXLPipeline and will be ignored.
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  8.63it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00,  6.43it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:01<00:00,  3.60it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  4.48it/s]
+2025-09-17 05:01:07,824 - INFO - Running eval for model:SD-XL, device:edge, budget:10, seed:17
+2025-09-17 05:01:07,825 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:07,827 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:07,827 - INFO - Running eval for model:SD-XL, device:edge, budget:10, seed:29
+2025-09-17 05:01:07,828 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:07,829 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:07,830 - INFO - Running eval for model:SD-XL, device:edge, budget:10, seed:43
+2025-09-17 05:01:07,830 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:07,831 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:07,831 - INFO - Running eval for model:SD-XL, device:edge, budget:10, seed:71
+2025-09-17 05:01:07,831 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:07,833 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:07,833 - INFO - Running eval for model:SD-XL, device:edge, budget:10, seed:97
+2025-09-17 05:01:07,833 - INFO - Evaluating on cuda with 10ms budget...
+2025-09-17 05:01:07,835 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_10ms.json
+2025-09-17 05:01:07,836 - INFO - Running eval for model:SD-XL, device:edge, budget:20, seed:17
+2025-09-17 05:01:07,836 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:07,837 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:07,837 - INFO - Running eval for model:SD-XL, device:edge, budget:20, seed:29
+2025-09-17 05:01:07,837 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:07,839 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:07,839 - INFO - Running eval for model:SD-XL, device:edge, budget:20, seed:43
+2025-09-17 05:01:07,840 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:07,841 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:07,841 - INFO - Running eval for model:SD-XL, device:edge, budget:20, seed:71
+2025-09-17 05:01:07,841 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:07,843 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:07,843 - INFO - Running eval for model:SD-XL, device:edge, budget:20, seed:97
+2025-09-17 05:01:07,843 - INFO - Evaluating on cuda with 20ms budget...
+2025-09-17 05:01:07,845 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_20ms.json
+2025-09-17 05:01:07,845 - INFO - Running eval for model:SD-XL, device:edge, budget:40, seed:17
+2025-09-17 05:01:07,845 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,846 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,847 - INFO - Running eval for model:SD-XL, device:edge, budget:40, seed:29
+2025-09-17 05:01:07,847 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,850 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,851 - INFO - Running eval for model:SD-XL, device:edge, budget:40, seed:43
+2025-09-17 05:01:07,851 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,853 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,853 - INFO - Running eval for model:SD-XL, device:edge, budget:40, seed:71
+2025-09-17 05:01:07,853 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,855 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,855 - INFO - Running eval for model:SD-XL, device:edge, budget:40, seed:97
+2025-09-17 05:01:07,855 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,857 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,857 - INFO - Running eval for model:SD-XL, device:laptop, budget:25, seed:17
+2025-09-17 05:01:07,857 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:07,859 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:07,859 - INFO - Running eval for model:SD-XL, device:laptop, budget:25, seed:29
+2025-09-17 05:01:07,859 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:07,861 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:07,861 - INFO - Running eval for model:SD-XL, device:laptop, budget:25, seed:43
+2025-09-17 05:01:07,861 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:07,863 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:07,863 - INFO - Running eval for model:SD-XL, device:laptop, budget:25, seed:71
+2025-09-17 05:01:07,863 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:07,865 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:07,865 - INFO - Running eval for model:SD-XL, device:laptop, budget:25, seed:97
+2025-09-17 05:01:07,865 - INFO - Evaluating on cuda with 25ms budget...
+2025-09-17 05:01:07,867 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_25ms.json
+2025-09-17 05:01:07,867 - INFO - Running eval for model:SD-XL, device:laptop, budget:50, seed:17
+2025-09-17 05:01:07,867 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:07,869 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:07,869 - INFO - Running eval for model:SD-XL, device:laptop, budget:50, seed:29
+2025-09-17 05:01:07,869 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:07,870 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:07,871 - INFO - Running eval for model:SD-XL, device:laptop, budget:50, seed:43
+2025-09-17 05:01:07,871 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:07,872 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:07,872 - INFO - Running eval for model:SD-XL, device:laptop, budget:50, seed:71
+2025-09-17 05:01:07,872 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:07,874 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:07,874 - INFO - Running eval for model:SD-XL, device:laptop, budget:50, seed:97
+2025-09-17 05:01:07,874 - INFO - Evaluating on cuda with 50ms budget...
+2025-09-17 05:01:07,875 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_50ms.json
+2025-09-17 05:01:07,875 - INFO - Running eval for model:SD-XL, device:server, budget:40, seed:17
+2025-09-17 05:01:07,875 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,877 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,877 - INFO - Running eval for model:SD-XL, device:server, budget:40, seed:29
+2025-09-17 05:01:07,877 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,878 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,879 - INFO - Running eval for model:SD-XL, device:server, budget:40, seed:43
+2025-09-17 05:01:07,879 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,880 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,880 - INFO - Running eval for model:SD-XL, device:server, budget:40, seed:71
+2025-09-17 05:01:07,880 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,882 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,882 - INFO - Running eval for model:SD-XL, device:server, budget:40, seed:97
+2025-09-17 05:01:07,882 - INFO - Evaluating on cuda with 40ms budget...
+2025-09-17 05:01:07,883 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_40ms.json
+2025-09-17 05:01:07,883 - INFO - Running eval for model:SD-XL, device:server, budget:80, seed:17
+2025-09-17 05:01:07,883 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:07,885 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:07,885 - INFO - Running eval for model:SD-XL, device:server, budget:80, seed:29
+2025-09-17 05:01:07,885 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:07,886 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:07,887 - INFO - Running eval for model:SD-XL, device:server, budget:80, seed:43
+2025-09-17 05:01:07,887 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:07,888 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:07,888 - INFO - Running eval for model:SD-XL, device:server, budget:80, seed:71
+2025-09-17 05:01:07,888 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:07,890 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:07,890 - INFO - Running eval for model:SD-XL, device:server, budget:80, seed:97
+2025-09-17 05:01:07,890 - INFO - Evaluating on cuda with 80ms budget...
+2025-09-17 05:01:07,891 - INFO - Saved evaluation results to .research/iteration3/results/results_cuda_80ms.json
+2025-09-17 05:01:07,892 - INFO - Generating Pareto plot for Latency vs. Energy...
+2025-09-17 05:01:08,176 - INFO - Saved plot to .research/iteration3/images/latency_vs_energy_pareto.png
+2025-09-17 05:01:08,176 - INFO - Experiment finished successfully.
