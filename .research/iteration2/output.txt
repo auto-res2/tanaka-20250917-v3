@@ -1,0 +1,19 @@
+=== [PHASE 2/2] Full experiment start Wed Sep 17 02:47:02 AM UTC 2025 ===
+--- Running Full Experiment ---
+Using device: cuda
+
+==================== Starting Experiment: VARIANCE_BENCHMARK ====================
+
+>>> Running: HyperVAD_ImageNet512
+Initializing model: EDM U-Net-256M
+--- Starting Training: variance_benchmark ---
+Epoch 1/10, Step 0, Loss: 0.3113
+Epoch 1/10, Step 10, Loss: 0.3195
+Epoch 1/10, Step 20, Loss: 0.3170
+Epoch 1/10, Step 30, Loss: 0.3067
+Epoch 1/10, Step 40, Loss: 0.3118
+Epoch 1/10, Step 50, Loss: 0.3104
+Epoch 1/10, Step 60, Loss: 0.3130
+Epoch 1/10, Step 70, Loss: 0.3118
+Epoch 1/10, Step 80, Loss: 0.2975
+Epoch 1/10, Step 90, Loss: 0.3011
