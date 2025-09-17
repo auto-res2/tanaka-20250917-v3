@@ -1,0 +1,19 @@
+# smoke_test.yaml: Small-scale configuration for quick validation
+num_workers: 2
+
+experiments:
+  variance_benchmark:
+    training:
+      batch_size: 32
+      lr: 0.0001
+      epochs: 1
+      max_steps: 10 # Run for only 10 steps to ensure the loop works
+      warmup_steps: 5
+    runs:
+      - name: "smoke_test_hypervad"
+        model:
+          name: "EDM U-Net-256M-dummy"
+        data:
+          name: "cifar10"
+          resolution: 32
+          subset_size: 128 # Use a very small subset of data

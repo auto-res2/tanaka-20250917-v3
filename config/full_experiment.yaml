@@ -1,0 +1,86 @@
+# full_experiment.yaml: Full-scale configuration for complete experimental runs
+num_workers: 16
+
+experiments:
+  variance_benchmark:
+    training:
+      batch_size: 1024 # Global batch size, will be smaller per GPU
+      lr: 0.0001
+      epochs: 10 # Corresponds to 96h wall-clock time
+      warmup_steps: 1000
+    runs:
+      - name: "HyperVAD_ImageNet512"
+        model:
+          name: "EDM U-Net-256M"
+        data:
+          name: "imagenet-512"
+          resolution: 512
+      - name: "HAB-CV-Diff_ImageNet512"
+        model:
+          name: "HAB-CV-Diff"
+        data:
+          name: "imagenet-512"
+          resolution: 512
+      - name: "Vanilla_DSM_ImageNet512"
+        model:
+          name: "Vanilla DSM"
+        data:
+          name: "imagenet-512"
+          resolution: 512
+      - name: "HyperVAD_Latent_LAION"
+        model:
+          name: "Latent-Diffusion-UNet-400M"
+        data:
+          name: "laion-aesthetics-latent-512"
+          resolution: 512 # Latent space resolution
+      - name: "HyperVAD_Video_Kinetics"
+        model:
+          name: "Video-Diffusion-3D-UNet-480M"
+        data:
+          name: "kinetics-400"
+          resolution: 64 # Frame resolution
+
+  green_scheduling:
+    training:
+      batch_size: 2048
+      lr: 0.0001
+      epochs: 3 # Roughly 24h continuation
+      warmup_steps: 1000
+      forecaster_params:
+        num_leaves: 256
+        learning_rate: 0.05
+        n_estimators: 2000
+        max_depth: 12
+    runs:
+      - name: "HyperVAD_Forecast_Scheduler"
+        model:
+          name: "EDM U-Net-256M"
+        data:
+          name: "imagenet-256"
+          resolution: 256
+      - name: "HyperVAD_RealTime_Scheduler"
+        model:
+          name: "EDM U-Net-256M"
+        data:
+          name: "imagenet-256"
+          resolution: 256
+
+  privacy_sentinel:
+    training:
+      batch_size: 512
+      lr: 0.00005
+      epochs: 5 # Represents 100k steps
+      privacy_threshold: 0.6
+    runs:
+      - name: "Privacy_Monitor_ON"
+        model:
+          name: "EDM U-Net-256M-FineTune"
+        data:
+          name: "mednist"
+          resolution: 64
+      - name: "Privacy_Monitor_OFF"
+        model:
+          name: "EDM U-Net-256M-FineTune"
+        data:
+          name: "mednist"
+          resolution: 64
