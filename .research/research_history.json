@@ -4,5 +4,79 @@
     "denoising diffusion loss",
     "diffusion model loss function",
     "weighted diffusion loss"
+  ],
+  "research_study_list": [
+    {
+      "title": "On Analyzing Generative and Denoising Capabilities of Diffusion-based Deep Generative Models"
+    },
+    {
+      "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
+    },
+    {
+      "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
+    },
+    {
+      "title": "Loss-Guided Diffusion Models for Plug-and-Play Controllable Generation"
+    },
+    {
+      "title": "Denoising Diffusion Samplers"
+    },
+    {
+      "title": "Information-Theoretic Diffusion"
+    },
+    {
+      "title": "Generalization in diffusion models arises from geometry-adaptive harmonic representations"
+    },
+    {
+      "title": "Generalization in diffusion models arises from geometry-adaptive harmonic representations"
+    },
+    {
+      "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
+    },
+    {
+      "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
+    },
+    {
+      "title": "An Expectation-Maximization Algorithm for Training Clean Diffusion Models from Corrupted Observations"
+    },
+    {
+      "title": "Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise"
+    },
+    {
+      "title": "DiffEnc: Variational Diffusion with a Learned Encoder"
+    },
+    {
+      "title": "Ambient Diffusion: Learning Clean Distributions from Corrupted Data"
+    },
+    {
+      "title": "Loss-Guided Diffusion Models for Plug-and-Play Controllable Generation"
+    },
+    {
+      "title": "Understanding Diffusion Models by Feynman's Path Integral"
+    },
+    {
+      "title": "DiffEnc: Variational Diffusion with a Learned Encoder"
+    },
+    {
+      "title": "You Only Train Once: Loss-Conditional Training of Deep Networks"
+    },
+    {
+      "title": "Loss-Guided Diffusion Models for Plug-and-Play Controllable Generation"
+    },
+    {
+      "title": "Stable Target Field for Reduced Variance Score Estimation in Diffusion Models"
+    },
+    {
+      "title": "Wavelet Diffusion Models Are Fast and Scalable Image Generators"
+    },
+    {
+      "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
+    },
+    {
+      "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation"
+    },
+    {
+      "title": "Autoregressive Image Generation without Vector Quantization"
+    }
   ]
 }
