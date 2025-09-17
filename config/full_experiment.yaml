@@ -1,0 +1,38 @@
+experiment_name: "radiance_full_experiment"
+
+# Execution settings
+seeds: [17, 29, 43, 71, 97]
+batch_size: 16
+
+# Model and Data settings
+models:
+  - "DiT-XL/2"
+  - "SD-XL"
+datasets:
+  train: "benjamin-paine/imagenet-1k-256x256"
+  eval: "benjamin-paine/imagenet-1k-256x256"
+adaptation_datasets:
+  domain_shift:
+    - "randall-lab/flowers102"
+    - "Skiittoo/cartoon-faces"
+
+# RL Training settings
+ppo_updates: 200000
+hyperparameters:
+  lr: 0.0001
+  ppo_clip: 0.2
+  lambda_power: 0.5
+  mu_risk: 50.0
+  risk_threshold_fid: 0.01
+  risk_threshold_lpips: 0.05
+
+# Zeroth-Order Adaptation settings
+adaptation:
+  target_fid_bound: 0.015
+  max_iter: 25
+
+# Evaluation settings
+budgets:
+  edge: [10, 20, 40]
+  laptop: [25, 50]
+  server: [40, 80]

@@ -1,1 +1,32 @@
-# Please list the required python packages.
+[project]
+name = "radiance"
+version = "0.1.0"
+description = "RADIANCE: Risk-bounded Adaptive DIffusion trANsformer aCceleration Engine"
+authors = [{name = "ML Researcher", email = "researcher@example.com"}]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "torch>=2.2.0",
+    "diffusers>=0.26.0",
+    "transformers>=4.30.0",
+    "datasets>=2.14.0",
+    "PyYAML>=6.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "seaborn>=0.12.0",
+    "matplotlib>=3.7.0",
+    "cma-es>=0.10.0",
+    "open-clip-torch>=2.20.0",
+    "fvcore>=0.1.5",
+    "pynvml>=11.5.0",
+    "auto-LiRPA>=0.3.0",
+    "accelerate>=0.25.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
