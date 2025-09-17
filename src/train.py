@@ -141,9 +141,9 @@ def train_radiance(config, device):
 
     logging.info("Training complete.")
     # Save models
-    os.makedirs('.research/iteration2/models', exist_ok=True)
-    torch.save(controller.state_dict(), '.research/iteration2/models/controller.pt')
-    torch.save(power_surrogate.state_dict(), '.research/iteration2/models/power_surrogate.pt')
+    os.makedirs('.research/iteration3/models', exist_ok=True)
+    torch.save(controller.state_dict(), '.research/iteration3/models/controller.pt')
+    torch.save(power_surrogate.state_dict(), '.research/iteration3/models/power_surrogate.pt')
     
     return controller, power_surrogate
 
@@ -155,7 +155,7 @@ def adapt_zeroth_order(config, device):
     # In a real scenario, you'd load the pre-trained diffusion model
     class MockDiffusionModel(nn.Module):
         def forward(self, x, mask):
-            return (x * mask).mean() + torch.randn(1) # Simulate FID calculation
+            return (x * mask).mean() + torch.randn(1, device=x.device) # Simulate FID calculation
     
     model = MockDiffusionModel().to(device)
     mask_init = torch.ones(20).cpu().numpy() # Reduced dimension for CMA-ES

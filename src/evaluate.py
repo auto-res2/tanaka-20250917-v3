@@ -96,7 +96,7 @@ def evaluate_model(controller, power_surrogate, base_model, device, budget_ms, c
     print(result_json_str)
 
     # Save results to a file
-    results_dir = '.research/iteration2/results'
+    results_dir = '.research/iteration3/results'
     os.makedirs(results_dir, exist_ok=True)
     file_path = os.path.join(results_dir, f"results_{device}_{budget_ms}ms.json")
     try:
@@ -121,7 +121,7 @@ def plot_results(results_list):
 
     logging.info("Generating Pareto plot for Latency vs. Energy...")
     
-    img_dir = '.research/iteration2/images'
+    img_dir = '.research/iteration3/images'
     os.makedirs(img_dir, exist_ok=True)
 
     plt.figure(figsize=(10, 6))
