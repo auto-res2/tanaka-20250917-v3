@@ -5,3 +5,375 @@
   publisher = {GitHub},
   url       = {https://github.com/airas-org/airas}
 }
+
+% ===========================================
+% REQUIRED CITATIONS
+% These papers must be cited in the manuscript
+% ===========================================
+
+@article{author-year-loss,
+ title = {Loss-Guided Diffusion Models for Plug-and-Play Controllable Generation}
+}
+
+@article{author-year-you,
+ title = {You Only Train Once: Loss-Conditional Training of Deep Networks}
+}
+
+@article{bai-2024-expectation,
+ abstract = {Diffusion models excel in solving imaging inverse problems due to their
+ability to model complex image priors. However, their reliance on large, clean
+datasets for training limits their practical use where clean data is scarce. In
+this paper, we propose EMDiffusion, an expectation-maximization (EM) approach
+to train diffusion models from corrupted observations. Our method alternates
+between reconstructing clean images from corrupted data using a known diffusion
+model (E-step) and refining diffusion model weights based on these
+reconstructions (M-step). This iterative process leads the learned diffusion
+model to gradually converge to the true clean data distribution. We validate
+our method through extensive experiments on diverse computational imaging
+tasks, including random inpainting, denoising, and deblurring, achieving new
+state-of-the-art performance.},
+ arxiv_url = {https://arxiv.org/pdf/2407.01014v1.pdf},
+ author = {Weimin Bai and Yifei Wang and Wenzheng Chen and He Sun},
+ title = {An Expectation-Maximization Algorithm for Training Clean Diffusion Models from Corrupted Observations},
+ year = {2024}
+}
+
+@article{bansal-2022-cold,
+ abstract = {Standard diffusion models involve an image transform -- adding Gaussian noise
+-- and an image restoration operator that inverts this degradation. We observe
+that the generative behavior of diffusion models is not strongly dependent on
+the choice of image degradation, and in fact an entire family of generative
+models can be constructed by varying this choice. Even when using completely
+deterministic degradations (e.g., blur, masking, and more), the training and
+test-time update rules that underlie diffusion models can be easily generalized
+to create generative models. The success of these fully deterministic models
+calls into question the community's understanding of diffusion models, which
+relies on noise in either gradient Langevin dynamics or variational inference,
+and paves the way for generalized diffusion models that invert arbitrary
+processes. Our code is available at
+https://github.com/arpitbansal297/Cold-Diffusion-Models},
+ arxiv_url = {https://arxiv.org/pdf/2208.09392v1.pdf},
+ author = {Arpit Bansal and Eitan Borgnia and Hong-Min Chu and Jie S. Li and Hamid Kazemi and Furong Huang and Micah Goldblum and Jonas Geiping and Tom Goldstein},
+ title = {Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise},
+ year = {2022}
+}
+
+@article{daras-2023-ambient,
+ abstract = {We present the first diffusion-based framework that can learn an unknown
+distribution using only highly-corrupted samples. This problem arises in
+scientific applications where access to uncorrupted samples is impossible or
+expensive to acquire. Another benefit of our approach is the ability to train
+generative models that are less likely to memorize individual training samples
+since they never observe clean training data. Our main idea is to introduce
+additional measurement distortion during the diffusion process and require the
+model to predict the original corrupted image from the further corrupted image.
+We prove that our method leads to models that learn the conditional expectation
+of the full uncorrupted image given this additional measurement corruption.
+This holds for any corruption process that satisfies some technical conditions
+(and in particular includes inpainting and compressed sensing). We train models
+on standard benchmarks (CelebA, CIFAR-10 and AFHQ) and show that we can learn
+the distribution even when all the training samples have $90\%$ of their pixels
+missing. We also show that we can finetune foundation models on small corrupted
+datasets (e.g. MRI scans with block corruptions) and learn the clean
+distribution without memorizing the training set.},
+ arxiv_url = {https://arxiv.org/pdf/2305.19256v1.pdf},
+ author = {Giannis Daras and Kulin Shah and Yuval Dagan and Aravind Gollakota and Alexandros G. Dimakis and Adam Klivans},
+ github_url = {https://github.com/giannisdaras/ambient-diffusion},
+ title = {Ambient Diffusion: Learning Clean Distributions from Corrupted Data},
+ year = {2023}
+}
+
+@article{deja-2022-analyzing,
+ abstract = {Diffusion-based Deep Generative Models (DDGMs) offer state-of-the-art
+performance in generative modeling. Their main strength comes from their unique
+setup in which a model (the backward diffusion process) is trained to reverse
+the forward diffusion process, which gradually adds noise to the input signal.
+Although DDGMs are well studied, it is still unclear how the small amount of
+noise is transformed during the backward diffusion process. Here, we focus on
+analyzing this problem to gain more insight into the behavior of DDGMs and
+their denoising and generative capabilities. We observe a fluid transition
+point that changes the functionality of the backward diffusion process from
+generating a (corrupted) image from noise to denoising the corrupted image to
+the final sample. Based on this observation, we postulate to divide a DDGM into
+two parts: a denoiser and a generator. The denoiser could be parameterized by a
+denoising auto-encoder, while the generator is a diffusion-based model with its
+own set of parameters. We experimentally validate our proposition, showing its
+pros and cons.},
+ arxiv_url = {https://arxiv.org/pdf/2206.00070v1.pdf},
+ author = {Kamil Deja and Anna Kuzina and Tomasz Trzciński and Jakub M. Tomczak},
+ github_url = {https://github.com/KamilDeja/analysing_ddgm},
+ title = {On Analyzing Generative and Denoising Capabilities of Diffusion-based Deep Generative Models},
+ year = {2022}
+}
+
+@article{hirono-2024-understanding,
+ abstract = {Score-based diffusion models have proven effective in image generation and
+have gained widespread usage; however, the underlying factors contributing to
+the performance disparity between stochastic and deterministic (i.e., the
+probability flow ODEs) sampling schemes remain unclear. We introduce a novel
+formulation of diffusion models using Feynman's path integral, which is a
+formulation originally developed for quantum physics. We find this formulation
+providing comprehensive descriptions of score-based generative models, and
+demonstrate the derivation of backward stochastic differential equations and
+loss functions.The formulation accommodates an interpolating parameter
+connecting stochastic and deterministic sampling schemes, and we identify this
+parameter as a counterpart of Planck's constant in quantum physics. This
+analogy enables us to apply the Wentzel-Kramers-Brillouin (WKB) expansion, a
+well-established technique in quantum physics, for evaluating the negative
+log-likelihood to assess the performance disparity between stochastic and
+deterministic sampling schemes.},
+ arxiv_url = {https://arxiv.org/pdf/2403.11262v1.pdf},
+ author = {Yuji Hirono and Akinori Tanaka and Kenji Fukushima},
+ github_url = {https://github.com/google/jax},
+ title = {Understanding Diffusion Models by Feynman's Path Integral},
+ year = {2024}
+}
+
+@article{kadkhodaie-2023-generalization,
+ abstract = {Deep neural networks (DNNs) trained for image denoising are able to generate
+high-quality samples with score-based reverse diffusion algorithms. These
+impressive capabilities seem to imply an escape from the curse of
+dimensionality, but recent reports of memorization of the training set raise
+the question of whether these networks are learning the "true" continuous
+density of the data. Here, we show that two DNNs trained on non-overlapping
+subsets of a dataset learn nearly the same score function, and thus the same
+density, when the number of training images is large enough. In this regime of
+strong generalization, diffusion-generated images are distinct from the
+training set, and are of high visual quality, suggesting that the inductive
+biases of the DNNs are well-aligned with the data density. We analyze the
+learned denoising functions and show that the inductive biases give rise to a
+shrinkage operation in a basis adapted to the underlying image. Examination of
+these bases reveals oscillating harmonic structures along contours and in
+homogeneous regions. We demonstrate that trained denoisers are inductively
+biased towards these geometry-adaptive harmonic bases since they arise not only
+when the network is trained on photographic images, but also when it is trained
+on image classes supported on low-dimensional manifolds for which the harmonic
+basis is suboptimal. Finally, we show that when trained on regular image
+classes for which the optimal basis is known to be geometry-adaptive and
+harmonic, the denoising performance of the networks is near-optimal.},
+ arxiv_url = {https://arxiv.org/pdf/2310.02557v3.pdf},
+ author = {Zahra Kadkhodaie and Florentin Guth and Eero P. Simoncelli and Stéphane Mallat},
+ github_url = {https://github.com/LabForComputationalVision/memorization_generalization_in_diffusion_models},
+ journal = {Int'l Conf on Learning Representations (ICLR), vol.12, Vienna, May
+  2024. Outstanding Paper award},
+ title = {Generalization in diffusion models arises from geometry-adaptive harmonic representations},
+ year = {2023}
+}
+
+@article{kingma-2023-understanding,
+ abstract = {To achieve the highest perceptual quality, state-of-the-art diffusion models
+are optimized with objectives that typically look very different from the
+maximum likelihood and the Evidence Lower Bound (ELBO) objectives. In this
+work, we reveal that diffusion model objectives are actually closely related to
+the ELBO.
+  Specifically, we show that all commonly used diffusion model objectives
+equate to a weighted integral of ELBOs over different noise levels, where the
+weighting depends on the specific objective used. Under the condition of
+monotonic weighting, the connection is even closer: the diffusion objective
+then equals the ELBO, combined with simple data augmentation, namely Gaussian
+noise perturbation. We show that this condition holds for a number of
+state-of-the-art diffusion models.
+  In experiments, we explore new monotonic weightings and demonstrate their
+effectiveness, achieving state-of-the-art FID scores on the high-resolution
+ImageNet benchmark.},
+ arxiv_url = {https://arxiv.org/pdf/2303.00848v7.pdf},
+ author = {Diederik P. Kingma and Ruiqi Gao},
+ title = {Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation},
+ year = {2023}
+}
+
+@article{kong-2023-information,
+ abstract = {Denoising diffusion models have spurred significant gains in density modeling
+and image generation, precipitating an industrial revolution in text-guided AI
+art generation. We introduce a new mathematical foundation for diffusion models
+inspired by classic results in information theory that connect Information with
+Minimum Mean Square Error regression, the so-called I-MMSE relations. We
+generalize the I-MMSE relations to exactly relate the data distribution to an
+optimal denoising regression problem, leading to an elegant refinement of
+existing diffusion bounds. This new insight leads to several improvements for
+probability distribution estimation, including theoretical justification for
+diffusion model ensembling. Remarkably, our framework shows how continuous and
+discrete probabilities can be learned with the same regression objective,
+avoiding domain-specific generative models used in variational methods. Code to
+reproduce experiments is provided at http://github.com/kxh001/ITdiffusion and
+simplified demonstration code is at
+http://github.com/gregversteeg/InfoDiffusionSimple.},
+ arxiv_url = {https://arxiv.org/pdf/2302.03792v1.pdf},
+ author = {Xianghao Kong and Rob Brekelmans and Greg Ver Steeg},
+ github_url = {https://github.com/kxh001/ITdiffusion},
+ title = {Information-Theoretic Diffusion},
+ year = {2023}
+}
+
+@article{li-2024-autoregressive,
+ abstract = {Conventional wisdom holds that autoregressive models for image generation are
+typically accompanied by vector-quantized tokens. We observe that while a
+discrete-valued space can facilitate representing a categorical distribution,
+it is not a necessity for autoregressive modeling. In this work, we propose to
+model the per-token probability distribution using a diffusion procedure, which
+allows us to apply autoregressive models in a continuous-valued space. Rather
+than using categorical cross-entropy loss, we define a Diffusion Loss function
+to model the per-token probability. This approach eliminates the need for
+discrete-valued tokenizers. We evaluate its effectiveness across a wide range
+of cases, including standard autoregressive models and generalized masked
+autoregressive (MAR) variants. By removing vector quantization, our image
+generator achieves strong results while enjoying the speed advantage of
+sequence modeling. We hope this work will motivate the use of autoregressive
+generation in other continuous-valued domains and applications. Code is
+available at: https://github.com/LTH14/mar.},
+ arxiv_url = {https://arxiv.org/pdf/2406.11838v3.pdf},
+ author = {Tianhong Li and Yonglong Tian and He Li and Mingyang Deng and Kaiming He},
+ github_url = {https://github.com/LTH14/mar},
+ title = {Autoregressive Image Generation without Vector Quantization},
+ year = {2024}
+}
+
+@article{nielsen-2023-diffenc,
+ abstract = {Diffusion models may be viewed as hierarchical variational autoencoders
+(VAEs) with two improvements: parameter sharing for the conditional
+distributions in the generative process and efficient computation of the loss
+as independent terms over the hierarchy. We consider two changes to the
+diffusion model that retain these advantages while adding flexibility to the
+model. Firstly, we introduce a data- and depth-dependent mean function in the
+diffusion process, which leads to a modified diffusion loss. Our proposed
+framework, DiffEnc, achieves a statistically significant improvement in
+likelihood on CIFAR-10. Secondly, we let the ratio of the noise variance of the
+reverse encoder process and the generative process be a free weight parameter
+rather than being fixed to 1. This leads to theoretical insights: For a finite
+depth hierarchy, the evidence lower bound (ELBO) can be used as an objective
+for a weighted diffusion loss approach and for optimizing the noise schedule
+specifically for inference. For the infinite-depth hierarchy, on the other
+hand, the weight parameter has to be 1 to have a well-defined ELBO.},
+ arxiv_url = {https://arxiv.org/pdf/2310.19789v2.pdf},
+ author = {Beatrix M. G. Nielsen and Anders Christensen and Andrea Dittadi and Ole Winther},
+ github_url = {https://github.com/bemigini/DiffEnc},
+ title = {DiffEnc: Variational Diffusion with a Learned Encoder},
+ year = {2023}
+}
+
+@article{phung-2022-wavelet,
+ abstract = {Diffusion models are rising as a powerful solution for high-fidelity image
+generation, which exceeds GANs in quality in many circumstances. However, their
+slow training and inference speed is a huge bottleneck, blocking them from
+being used in real-time applications. A recent DiffusionGAN method
+significantly decreases the models' running time by reducing the number of
+sampling steps from thousands to several, but their speeds still largely lag
+behind the GAN counterparts. This paper aims to reduce the speed gap by
+proposing a novel wavelet-based diffusion scheme. We extract low-and-high
+frequency components from both image and feature levels via wavelet
+decomposition and adaptively handle these components for faster processing
+while maintaining good generation quality. Furthermore, we propose to use a
+reconstruction term, which effectively boosts the model training convergence.
+Experimental results on CelebA-HQ, CIFAR-10, LSUN-Church, and STL-10 datasets
+prove our solution is a stepping-stone to offering real-time and high-fidelity
+diffusion models. Our code and pre-trained checkpoints are available at
+\url{https://github.com/VinAIResearch/WaveDiff.git}.},
+ arxiv_url = {https://arxiv.org/pdf/2211.16152v2.pdf},
+ author = {Hao Phung and Quan Dao and Anh Tran},
+ title = {Wavelet Diffusion Models Are Fast and Scalable Image Generators},
+ year = {2022}
+}
+
+@article{vargas-2023-denoising,
+ abstract = {Denoising diffusion models are a popular class of generative models providing
+state-of-the-art results in many domains. One adds gradually noise to data
+using a diffusion to transform the data distribution into a Gaussian
+distribution. Samples from the generative model are then obtained by simulating
+an approximation of the time-reversal of this diffusion initialized by Gaussian
+samples. Practically, the intractable score terms appearing in the
+time-reversed process are approximated using score matching techniques. We
+explore here a similar idea to sample approximately from unnormalized
+probability density functions and estimate their normalizing constants. We
+consider a process where the target density diffuses towards a Gaussian.
+Denoising Diffusion Samplers (DDS) are obtained by approximating the
+corresponding time-reversal. While score matching is not applicable in this
+context, we can leverage many of the ideas introduced in generative modeling
+for Monte Carlo sampling. Existing theoretical results from denoising diffusion
+models also provide theoretical guarantees for DDS. We discuss the connections
+between DDS, optimal control and Schr\"odinger bridges and finally demonstrate
+DDS experimentally on a variety of challenging sampling tasks.},
+ arxiv_url = {https://arxiv.org/pdf/2302.13834v2.pdf},
+ author = {Francisco Vargas and Will Grathwohl and Arnaud Doucet},
+ journal = {In The Eleventh In The Eleventh International Conference on
+  Learning Representations, 2023},
+ title = {Denoising Diffusion Samplers},
+ year = {2023}
+}
+
+@article{xu-2023-stable,
+ abstract = {Diffusion models generate samples by reversing a fixed forward diffusion
+process. Despite already providing impressive empirical results, these
+diffusion models algorithms can be further improved by reducing the variance of
+the training targets in their denoising score-matching objective. We argue that
+the source of such variance lies in the handling of intermediate noise-variance
+scales, where multiple modes in the data affect the direction of reverse paths.
+We propose to remedy the problem by incorporating a reference batch which we
+use to calculate weighted conditional scores as more stable training targets.
+We show that the procedure indeed helps in the challenging intermediate regime
+by reducing (the trace of) the covariance of training targets. The new stable
+targets can be seen as trading bias for reduced variance, where the bias
+vanishes with increasing reference batch size. Empirically, we show that the
+new objective improves the image quality, stability, and training speed of
+various popular diffusion models across datasets with both general ODE and SDE
+solvers. When used in combination with EDM, our method yields a current SOTA
+FID of 1.90 with 35 network evaluations on the unconditional CIFAR-10
+generation task. The code is available at https://github.com/Newbeeer/stf},
+ arxiv_url = {https://arxiv.org/pdf/2302.00670v2.pdf},
+ author = {Yilun Xu and Shangyuan Tong and Tommi Jaakkola},
+ github_url = {https://github.com/Newbeeer/stf},
+ title = {Stable Target Field for Reduced Variance Score Estimation in Diffusion Models},
+ year = {2023}
+}
+
+% ===========================================
+% REFERENCE CANDIDATES
+% Additional reference papers for context
+% ===========================================
+
+@article{author-year-marginalized,
+ title = {Marginalized denoising auto-encoders for nonlinear representations.}
+}
+
+@article{dhariwal-2021-diffusion,
+ abstract = {We show that diffusion models can achieve image sample quality superior to
+the current state-of-the-art generative models. We achieve this on
+unconditional image synthesis by finding a better architecture through a series
+of ablations. For conditional image synthesis, we further improve sample
+quality with classifier guidance: a simple, compute-efficient method for
+trading off diversity for fidelity using gradients from a classifier. We
+achieve an FID of 2.97 on ImageNet 128$\times$128, 4.59 on ImageNet
+256$\times$256, and 7.72 on ImageNet 512$\times$512, and we match BigGAN-deep
+even with as few as 25 forward passes per sample, all while maintaining better
+coverage of the distribution. Finally, we find that classifier guidance
+combines well with upsampling diffusion models, further improving FID to 3.94
+on ImageNet 256$\times$256 and 3.85 on ImageNet 512$\times$512. We release our
+code at https://github.com/openai/guided-diffusion},
+ arxiv_url = {https://arxiv.org/pdf/2105.05233v4.pdf},
+ author = {Prafulla Dhariwal and Alex Nichol},
+ title = {Diffusion models beat GANs on image synthesis.},
+ year = {2021}
+}
+
+@article{heusel-2017-gans,
+ abstract = {Generative Adversarial Networks (GANs) excel at creating realistic images
+with complex models for which maximum likelihood is infeasible. However, the
+convergence of GAN training has still not been proved. We propose a two
+time-scale update rule (TTUR) for training GANs with stochastic gradient
+descent on arbitrary GAN loss functions. TTUR has an individual learning rate
+for both the discriminator and the generator. Using the theory of stochastic
+approximation, we prove that the TTUR converges under mild assumptions to a
+stationary local Nash equilibrium. The convergence carries over to the popular
+Adam optimization, for which we prove that it follows the dynamics of a heavy
+ball with friction and thus prefers flat minima in the objective landscape. For
+the evaluation of the performance of GANs at image generation, we introduce the
+"Fr\'echet Inception Distance" (FID) which captures the similarity of generated
+images to real ones better than the Inception Score. In experiments, TTUR
+improves learning for DCGANs and Improved Wasserstein GANs (WGAN-GP)
+outperforming conventional GAN training on CelebA, CIFAR-10, SVHN, LSUN
+Bedrooms, and the One Billion Word Benchmark.},
+ arxiv_url = {https://arxiv.org/pdf/1706.08500v6.pdf},
+ author = {Martin Heusel and Hubert Ramsauer and Thomas Unterthiner and Bernhard Nessler and Sepp Hochreiter},
+ journal = {Advances in Neural Information Processing Systems 30 (NIPS 2017)},
+ title = {Gans trained by a two time-scale update rule converge to a local nash equilibrium.},
+ year = {2017}
+}
