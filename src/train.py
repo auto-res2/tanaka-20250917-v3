@@ -1,8 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from diffusers import DiTPIPEline, StableDiffusionXLPipeline
+from diffusers import DiTPipeline, StableDiffusionXLPipeline
 import os
+import numpy as np
 from cmaes import CMA
 import logging
 
@@ -23,7 +24,8 @@ class NeuralPowerSurrogate(nn.Module):
         )
 
     def forward(self, x):
-        return self.model(x)
+        output = self.model(x)
+        return output[:, 0], output[:, 1]
 
 # M2: Constrained RL Controller
 class RLController(nn.Module):
@@ -58,12 +60,12 @@ def mock_taylor_upper(jac_lo, jac_hi):
     """Mock function for calculating Taylor expansion upper bound on metrics."""
     return (jac_hi - jac_lo).mean().abs()
 
-def ppo_step(reward, actor, critic, obs, actions, old_log_probs, optimizer, clip_range=0.2):
+def ppo_step(reward, actor, critic, obs, actions, old_log_probs, optimizer, controller, power_surrogate, clip_range=0.2):
     """Performs a single PPO optimization step."""
     # This is a simplified PPO update for demonstration purposes.
     # A full implementation would handle advantages, returns (GAE), and multiple epochs.
-    _, new_value = critic(obs)
-    _, new_log_probs = actor(obs) # Simplified log_prob calculation
+    new_value = critic(obs)
+    new_log_probs = actor(obs) # Simplified log_prob calculation
     
     # Detach values for actor loss calculation
     advantage = reward - new_value.detach()
@@ -77,14 +79,19 @@ def ppo_step(reward, actor, critic, obs, actions, old_log_probs, optimizer, clip
     surr2 = torch.clamp(ratio, 1.0 - clip_range, 1.0 + clip_range) * advantage
     actor_loss = -torch.min(surr1, surr2).mean()
     
-    # Critic loss
-    critic_loss = nn.MSELoss()(new_value, reward.unsqueeze(1))
+    # Critic loss - ensure reward has correct shape
+    if reward.dim() == 0:  # scalar
+        reward_target = reward.unsqueeze(0).unsqueeze(0)
+    else:
+        reward_target = reward.unsqueeze(1) if reward.dim() == 1 else reward
+    critic_loss = nn.MSELoss()(new_value, reward_target)
     
     # Total loss
     loss = actor_loss + 0.5 * critic_loss
     
     optimizer.zero_grad()
     loss.backward()
+    torch.nn.utils.clip_grad_norm_(list(controller.parameters()) + list(power_surrogate.parameters()), max_norm=1.0)
     optimizer.step()
     return actor_loss.item(), critic_loss.item()
 
@@ -127,16 +134,16 @@ def train_radiance(config, device):
         # Dummy log_probs for PPO step
         old_log_probs = torch.randn(1)
 
-        actor_loss, critic_loss = ppo_step(reward, controller.actor, controller.critic, obs, None, old_log_probs, optimizer, config['hyperparameters']['ppo_clip'])
+        actor_loss, critic_loss = ppo_step(reward, controller.actor, controller.critic, obs, None, old_log_probs, optimizer, controller, power_surrogate, config['hyperparameters']['ppo_clip'])
 
         if step % 100 == 0:
             logging.info(f"Step {step}/{config['ppo_updates']}: Reward: {reward.item():.4f}, Actor Loss: {actor_loss:.4f}, Critic Loss: {critic_loss:.4f}")
 
     logging.info("Training complete.")
     # Save models
-    os.makedirs('.research/iteration1/models', exist_ok=True)
-    torch.save(controller.state_dict(), '.research/iteration1/models/controller.pt')
-    torch.save(power_surrogate.state_dict(), '.research/iteration1/models/power_surrogate.pt')
+    os.makedirs('.research/iteration2/models', exist_ok=True)
+    torch.save(controller.state_dict(), '.research/iteration2/models/controller.pt')
+    torch.save(power_surrogate.state_dict(), '.research/iteration2/models/power_surrogate.pt')
     
     return controller, power_surrogate
 
@@ -151,33 +158,36 @@ def adapt_zeroth_order(config, device):
             return (x * mask).mean() + torch.randn(1) # Simulate FID calculation
     
     model = MockDiffusionModel().to(device)
-    mask_init = torch.ones(256).cpu().numpy() # Initial mask
+    mask_init = torch.ones(20).cpu().numpy() # Reduced dimension for CMA-ES
     target_fid_bound = config['adaptation']['target_fid_bound']
 
-    es = CMA(mean=mask_init, sigma=0.3, population_size=20)
+    es = CMA(mean=mask_init, sigma=0.3, population_size=20, seed=42)
     
     best_fitness = float('inf')
+    best_mask = None
     iteration = 0
     while not es.should_stop() and iteration < config['adaptation']['max_iter']:
         solutions = []
-        asked_solutions = es.ask()
-        for mask_numpy in asked_solutions:
-            mask_tensor = torch.from_numpy(mask_numpy).float().to(device)
+        for _ in range(es.population_size):
+            solution_vector = es.ask()
+            
+            expanded_mask = np.interp(np.linspace(0, 19, 256), np.arange(20), solution_vector)
+            mask_tensor = torch.from_numpy(expanded_mask).float().to(device)
             # Mock evaluation of the certified FID bound
             bound = model(torch.randn(1, 256).to(device), mask_tensor).item()
-            solutions.append((mask_numpy, bound))
+            solutions.append((solution_vector, bound))
+            
+            if bound < best_fitness:
+                best_fitness = bound
+                best_mask = solution_vector.copy()
         
         es.tell(solutions)
-        best_solution_this_gen = min(solutions, key=lambda x: x[1])
-        best_fitness = best_solution_this_gen[1]
         iteration += 1
         logging.info(f"CMA-ES Iter {iteration}: Best Bound = {best_fitness:.4f}")
         
         if best_fitness <= target_fid_bound:
             logging.info(f"Target bound reached at iteration {iteration}.")
             break
-
-    best_mask = es.best_solution[0]
     logging.info("Zeroth-Order Adaptation complete.")
     return best_mask
 
@@ -185,18 +195,21 @@ def get_models(model_name, device):
     """Loads pre-trained diffusion models."""
     token = os.getenv('HF_TOKEN')
     logging.info(f"Loading model: {model_name}")
+    
+    dtype = torch.float32 if device == 'cpu' else torch.float16
+    
     if model_name == 'DiT-XL/2':
         try:
             # Note: DiT-XL is not directly in diffusers, using a placeholder
             # In a real scenario, one might need a custom pipeline
-            pipe = StableDiffusionXLPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, use_auth_token=token).to(device)
+            pipe = StableDiffusionXLPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=dtype, use_auth_token=token).to(device)
             logging.info("Loaded SD-XL as a placeholder for DiT-XL/2.")
         except Exception as e:
             logging.error(f"Failed to load DiT-XL/2 model: {e}")
             raise
     elif model_name == 'SD-XL':
         try:
-            pipe = StableDiffusionXLPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, use_auth_token=token).to(device)
+            pipe = StableDiffusionXLPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=dtype, use_auth_token=token).to(device)
         except Exception as e:
             logging.error(f"Failed to load SD-XL model: {e}")
             raise

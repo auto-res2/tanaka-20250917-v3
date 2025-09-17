@@ -16,11 +16,10 @@ dependencies = [
     "pandas>=2.0.0",
     "seaborn>=0.12.0",
     "matplotlib>=3.7.0",
-    "cma-es>=0.10.0",
+    "cmaes>=0.10.0",
     "open-clip-torch>=2.20.0",
     "fvcore>=0.1.5",
     "pynvml>=11.5.0",
-    "auto-LiRPA>=0.3.0",
     "accelerate>=0.25.0"
 ]
 
