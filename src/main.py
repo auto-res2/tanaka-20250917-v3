@@ -87,7 +87,7 @@ def main():
 
     # Post-experiment analysis and plotting
     if 'variance_benchmark' in config['experiments']:
-        plot_variance_curves(all_results, '.research/iteration1/images')
+        plot_variance_curves(all_results, '.research/iteration2/images')
 
     print("\n--- All experiments complete ---")
     print("Summary of all runs:")

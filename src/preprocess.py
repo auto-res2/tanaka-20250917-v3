@@ -48,8 +48,14 @@ def get_transforms(dataset_name, resolution):
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ])
-    # No transforms for video, handled in dataset directly
-    return None
+    elif 'kinetics' in dataset_name:
+        return transforms.Compose([transforms.ToTensor()])
+    else:
+        return transforms.Compose([
+            transforms.Resize(resolution, antialias=True),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+        ])
 
 
 def load_data(data_config, batch_size, num_workers=4):
@@ -69,10 +75,15 @@ def load_data(data_config, batch_size, num_workers=4):
             dataset = load_dataset("zh-plus/tiny-imagenet", split='train', use_auth_token=use_auth_token)
             val_dataset = load_dataset("zh-plus/tiny-imagenet", split='valid', use_auth_token=use_auth_token)
             transform = get_transforms('imagenet', resolution)
-            dataset.set_transform(lambda x: {'image': transform(x['image'].convert('RGB')), 'label': x['label']})
-            val_dataset.set_transform(lambda x: {'image': transform(x['image'].convert('RGB')), 'label': x['label']})
-            train_dataset = dataset.with_format('torch')
-            val_dataset = val_dataset.with_format('torch')
+            
+            def transform_fn(examples):
+                images = [transform(img.convert('RGB')) for img in examples['image']]
+                return {'image': images, 'label': examples['label']}
+            
+            dataset.set_transform(transform_fn)
+            val_dataset.set_transform(transform_fn)
+            train_dataset = dataset
+            val_dataset = val_dataset
         elif 'laion' in dataset_name:
             # This is a huge dataset, so we'll use a dummy for now
             print(f"Using dummy dataset for {dataset_name}")
@@ -91,10 +102,15 @@ def load_data(data_config, batch_size, num_workers=4):
             dataset = load_dataset('cifar10', split='train', use_auth_token=use_auth_token)
             val_dataset = load_dataset('cifar10', split='test', use_auth_token=use_auth_token)
             transform = get_transforms('cifar10', resolution)
-            dataset.set_transform(lambda x: {'image': transform(x['img']), 'label': x['label']})
-            val_dataset.set_transform(lambda x: {'image': transform(x['img']), 'label': x['label']})
-            train_dataset = dataset.with_format('torch')
-            val_dataset = val_dataset.with_format('torch')
+            
+            def transform_fn(examples):
+                images = [transform(img) for img in examples['img']]
+                return {'image': images, 'label': examples['label']}
+            
+            dataset.set_transform(transform_fn)
+            val_dataset.set_transform(transform_fn)
+            train_dataset = dataset
+            val_dataset = val_dataset
         else:
             raise ValueError(f"Unknown dataset: {dataset_name}")
     except Exception as e:
@@ -109,8 +125,17 @@ def load_data(data_config, batch_size, num_workers=4):
         train_dataset = Subset(train_dataset, range(min(subset_size, len(train_dataset))))
         val_dataset = Subset(val_dataset, range(min(int(subset_size*0.2), len(val_dataset))))
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
+    def collate_fn(batch):
+        if isinstance(batch[0], dict):
+            images = torch.stack([item['image'] for item in batch])
+            labels = torch.tensor([item['label'] for item in batch])
+        else:
+            images = torch.stack([item[0] for item in batch])
+            labels = torch.tensor([item[1] for item in batch])
+        return images, labels
+    
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=True, collate_fn=collate_fn)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True, collate_fn=collate_fn)
     
     # For privacy experiment, we need access to both train and val loaders for the attack
     return {'train': train_loader, 'val': val_loader}
