@@ -138,7 +138,7 @@ def evaluate_experiment(model, loaders, eval_config, duration_s, experiment_type
     results['experiment_type'] = experiment_type
 
     # Save results to JSON
-    output_dir = ".research/iteration2"
+    output_dir = ".research/iteration3"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
